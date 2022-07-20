@@ -1,0 +1,50 @@
+houses = {"Harry": "Griffindor", "Draco": "Slytherin"}
+print(houses['Harry'])
+#Key and Value pairs.
+
+def square(x):
+    return x*x
+
+for i in range(10):
+    print(f'Print {i} times')
+
+#name square not defined in file?
+# import functions import square
+#csv spreadsheet type file
+
+#Object Oriented in Python
+
+class Point():
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+p = Point(2, 9)
+print(p.x)
+print(p.y)
+
+#No more than it can handle
+
+class Flight():
+    def __init__(self, capacity):
+        self.capacity = capacity
+        self.passengers = []
+
+    def add_passenger(self, name):
+        if not self.open_seats():
+            return False
+        self.passengers.append(name)
+        return True
+
+    def open_seats(self):
+        return self.capacity - len(self.passengers)
+
+flight = Flight(3) 
+
+people = ['HARRY', "ron", 'heroine']
+for person in people:
+    success = flight.add_passenger(person)
+    if success:
+        print(f"availble {person}")
+    else:
+        print(f"we are full {person}")
